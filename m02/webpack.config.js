@@ -2,8 +2,9 @@
 
 const path = require('path')
 const webpack = require('webpack')
+const validator = require('webpack-validator')
 
-module.exports = {
+module.exports = validator({
   devtool: 'source-map',
   entry: [
     'react-hot-loader/patch',
@@ -13,13 +14,21 @@ module.exports = {
   ],
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    publicPath: '/static/'
   },
-  publicPath: '/static/',
   plugins: [
     new webpack.HotModuleReplacementPlugin()
   ],
   module: {
+    preLoaders: [
+      {
+        test: /\.js/,
+        exclude: /node_modules/,
+        include: /src/,
+        loader: 'standard'
+      }
+    ],
     loaders: [
       {
         test: /\.js/,
@@ -29,4 +38,4 @@ module.exports = {
       }
     ]
   }
-}
+})
