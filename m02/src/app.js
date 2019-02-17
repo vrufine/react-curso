@@ -1,9 +1,11 @@
 'use strict'
 
-import { createClass, createElement } from 'react'
+import React, { createClass } from 'react'
 
 const Title = createClass({
-  render: () => createElement('h1', null, 'Ninja')
+  render: () => (
+    <h1>JSX</h1>
+  )
 })
 
 export default Title
