@@ -2,10 +2,10 @@
 
 import React, { createClass } from 'react'
 
-const Title = createClass({
+const App = createClass({
   render: () => (
-    <h1>Hot reload!</h1>
+    <div>Hot loader fungando</div>
   )
 })
 
-export default Title
+export default App
