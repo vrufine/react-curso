@@ -1,7 +1,9 @@
 'use strict'
 
-const sum = (v1, v2) => v1 + v2
+const React = require('react')
 
-module.exports = {
-  sum
-}
+const Title = React.createClass({
+  render: () => React.createElement('h1', null, 'Ninja')
+})
+
+module.exports = Title
