@@ -4,7 +4,7 @@ import React, { createClass } from 'react'
 
 const Title = createClass({
   render: () => (
-    <h1>JSX</h1>
+    <h1>Hot reload!</h1>
   )
 })
 
